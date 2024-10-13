@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const Tool = require("./models/post");
@@ -17,6 +18,7 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -29,6 +31,10 @@ app.use((req, res, next) => {
     "GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
   next();
+});
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "angular", "browser", "index.html"));
 });
 
 app.post("/api/tools", (req, res, next) => {
