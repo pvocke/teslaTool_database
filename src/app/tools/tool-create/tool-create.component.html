@@ -1,0 +1,64 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form [formGroup]="form" (submit)="onSaveTool()" *ngIf="!isLoading">
+        <mat-form-field>
+            <textarea         
+                matInput type="text"
+                name="position" 
+                formControlName="position"
+                placeholder="Avaliablity Status">
+                <mat-error *ngIf="form.get('position')?.invalid">Please enter position</mat-error>
+            </textarea>
+        </mat-form-field>
+    
+    <mat-form-field>
+        <textarea 
+            matInput type="text" 
+            rows="6" 
+            formControlName="name"
+            name="name"
+            placeholder="Tool Name">
+        </textarea>
+        <mat-error *ngIf="form.get('name')?.invalid">Please enter a name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+    
+        <textarea 
+            matInput type="text" 
+            formControlName="partNumber"
+            name="partNumber" 
+            placeholder="Part #">
+        </textarea>
+        <mat-error *ngIf="form.get('partNumber')?.invalid">Please enter a part number</mat-error>    
+    </mat-form-field>
+    
+    <mat-form-field>
+        <textarea 
+            matInput type="text" 
+            formControlName="location"
+            name="location" 
+            placeholder="Tool Cabinet Location">
+        </textarea>
+        <mat-error *ngIf="form.get('location')?.invalid">Please enter tool location.</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <textarea 
+            matInput type="text" 
+            formControlName="description"
+            name="description" 
+            placeholder="Description">
+            
+        
+        </textarea>
+        <mat-error *ngIf="form.get('description')?.invalid">Please enter brief description</mat-error>
+</mat-form-field>
+<button 
+mat-flat-button
+color="primary" 
+type="submit">Save Tool</button>
+</form>
+</mat-card>
+
+
+
