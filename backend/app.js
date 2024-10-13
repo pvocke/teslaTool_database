@@ -47,7 +47,7 @@ app.post("/api/tools", (req, res, next) => {
   });
   tool.save().then((createdTool) => {
     res.status(201).json({
-      message: "Tool added!",
+      message: "Tool added!!",
       toolId: createdTool._id,
     });
   });
