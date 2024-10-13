@@ -33,9 +33,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "angular", "server", "index.server.html"));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, "angular", "browser", "index.csr.html"));
+// });
 
 app.post("/api/tools", (req, res, next) => {
   const tool = new Tool({
