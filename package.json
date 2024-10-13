@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "start:server": "nodemon ./backend/server.js",
-    "serve:ssr:teslaTools": "node backend/server.mjs\\"
+    "start:server": "nodemon ./backend/server.js"
   },
   "private": true,
   "dependencies": {
