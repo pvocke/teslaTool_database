@@ -1,3 +1,3 @@
 export const environment = {
-    apiURL: "http://localhost:3000/api"
+    apiURL: "https://tsl-tool-management-cc78b5fc08af.herokuapp.com/api"
 };
